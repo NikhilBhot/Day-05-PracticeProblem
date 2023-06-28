@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace GenericsPracriceProblem
 {
-    /*Given an array of Integer, Double and Character, write a program to delete the element
-     - Create DeleteArray class and define DeleteMethod to delete corresponding element from
-     the array using Generic method.*/
-    public class DeleteArray1
+    public class DeleteArray<T>
     {
-        public static T[] DeleteMethod<T>(T[] array, T elementToDelete)
+        private T[] array;
+
+        public DeleteArray(T[] array)
+        {
+            this.array = array;
+        }
+
+        public T[] DeleteMethod(T elementToDelete)
         {
             int elementIndex = Array.IndexOf(array, elementToDelete);
 
@@ -29,9 +33,9 @@ namespace GenericsPracriceProblem
             return newArray;
         }
     }
-    public class DeleteArrayEleWithGenerics
+    public class DeleteArrayEleWithGenericClass
     {
-        public static void WithGenericMethod()
+        public static void WithGenericClass()
         {
             // Example usage
 
@@ -39,7 +43,8 @@ namespace GenericsPracriceProblem
             int[] intArray = { 1, 2, 3, 4, 5 };
             int elementToDelete = 3;
 
-            int[] newIntArray = DeleteArray1.DeleteMethod(intArray, elementToDelete);
+            DeleteArray<int> intDeleteArray = new DeleteArray<int>(intArray);
+            int[] newIntArray = intDeleteArray.DeleteMethod(elementToDelete);
 
             Console.WriteLine("New Integer Array:");
             foreach (int num in newIntArray)
@@ -51,7 +56,8 @@ namespace GenericsPracriceProblem
             double[] doubleArray = { 1.5, 2.5, 3.5, 4.5, 5.5 };
             double doubleElementToDelete = 4.5;
 
-            double[] newDoubleArray = DeleteArray1.DeleteMethod(doubleArray, doubleElementToDelete);
+            DeleteArray<double> doubleDeleteArray = new DeleteArray<double>(doubleArray);
+            double[] newDoubleArray = doubleDeleteArray.DeleteMethod(doubleElementToDelete);
 
             Console.WriteLine("New Double Array:");
             foreach (double num in newDoubleArray)
@@ -63,7 +69,8 @@ namespace GenericsPracriceProblem
             char[] charArray = { 'A', 'B', 'C', 'D', 'E' };
             char charElementToDelete = 'C';
 
-            char[] newCharArray = DeleteArray1.DeleteMethod(charArray, charElementToDelete);
+            DeleteArray<char> charDeleteArray = new DeleteArray<char>(charArray);
+            char[] newCharArray = charDeleteArray.DeleteMethod(charElementToDelete);
 
             Console.WriteLine("New Character Array:");
             foreach (char ch in newCharArray)
