@@ -4,8 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("WithOut Using Generics");
             DeleteArrayEleWithoutGenerics.WithoutGenericMethod();
+            Console.WriteLine("____________________________");
+            Console.WriteLine("Using Generics");
+            DeleteArrayEleWithGenerics.WithGenericMethod();
         }
     }
 }
