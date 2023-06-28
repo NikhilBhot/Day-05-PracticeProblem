@@ -12,6 +12,10 @@
             Console.WriteLine("____________________________");
             Console.WriteLine("With Generic Class");
             DeleteArrayEleWithGenericClass.WithGenericClass();
+
+            Console.WriteLine("____________________________");
+            Console.WriteLine("Mimimum Finder Without Generics");
+            MinimumFinder.FindMimimumMethod();
         }
     }
 }
