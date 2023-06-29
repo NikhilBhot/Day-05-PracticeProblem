@@ -16,6 +16,11 @@
             Console.WriteLine("____________________________");
             Console.WriteLine("Mimimum Finder Without Generics");
             MinimumFinder.FindMimimumMethod();
+            Console.WriteLine("_________________________________");
+            Console.WriteLine("Minimum Finder Refactor With Generis");
+           // MinimumFinderRefactor.MinimumFinderMethodRefactor();
+
+            MinimumFinderRefactor.MinimumFinderMethodRefactor();
         }
     }
 }
